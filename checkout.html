@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout </title>
+    <link rel="stylesheet" href="styles/new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="index.html"><i class="fas fa-store"></i> Ray of Traditions</a></h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                   
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <h1>Checkout</h1>
+            <div class="checkout-content">
+                <div class="checkout-form">
+                    <form id="checkoutForm">
+                        <div class="form-section">
+                            <h3><i class="fas fa-user"></i> Customer Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-map-marker-alt"></i> Shipping Address</h3>
+                            <div class="form-group">
+                                <label for="address">Address *</label>
+                                <textarea id="address" name="address" rows="3" required></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State *</label>
+                                    <input type="text" id="state" name="state" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pincode">Pincode *</label>
+                                    <input type="text" id="pincode" name="pincode" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-credit-card"></i> Payment Method</h3>
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="razorpay" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="payment-info">
+                                        <strong>Pay with Razorpay</strong>
+                                        <p>Credit/Debit Card, UPI, Net Banking, Wallets</p>
+                                        <div class="payment-icons">
+                                            <img src="https://cdn.razorpay.com/static/assets/pay_methods_ui/logos.png" alt="Payment Methods" style="height: 24px;">
+                                        </div>
+                                    </div>
+                                </label>
+                               
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h3>Order Summary</h3>
+                        <div id="orderItems">
+                            <!-- Order items will be loaded here -->
+                        </div>
+                        <div class="summary-totals">
+                            <div class="summary-item">
+                                <span>Subtotal:</span>
+                                <span id="orderSubtotal">₹0.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Shipping:</span>
+                                <span id="orderShipping">₹0.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>GST (18%):</span>
+                                <span id="orderGst">₹0.00</span>
+                            </div>
+                            <div class="summary-item total">
+                                <span>Total:</span>
+                                <span id="orderTotal">₹0.00</span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary place-order-btn" id="placeOrderBtn">
+                            <i class="fas fa-lock"></i> Place Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ray of Traditions</h3>
+                    <p>Your trusted partner for quality products</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +91 8095864799</p>
+                    <p><i class="fas fa-envelope"></i> rayoftradition@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ray of Traditions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
